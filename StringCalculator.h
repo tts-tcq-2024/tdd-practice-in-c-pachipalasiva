@@ -1,6 +1,3 @@
-#include "StringCalculator.h"
-#include <stdlib.h> // For atoi
-#include <string.h> // For strtok, strchr
 
 int add(const char* input) {
     if (input == NULL || input[0] == '\0') {
