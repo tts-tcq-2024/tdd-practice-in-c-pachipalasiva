@@ -13,7 +13,7 @@ int parse_input(const char *input_string, char *delimiter) {
 
 int split_and_convert(const char *input_string, char delimiter, int *numbers, int *count) {
     char *token;
-    char *delim = malloc(2);
+    char delim[2];
     delim[0] = delimiter;
     delim[1] = '\0';
     *count = 0;
@@ -23,7 +23,6 @@ int split_and_convert(const char *input_string, char delimiter, int *numbers, in
         (*count)++;
         token = strtok(NULL, delim);
     }
-    free(delim);
     return *count;
 }
 
