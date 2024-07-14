@@ -37,7 +37,7 @@ int filter_numbers(int *numbers, int count) {
     return j;
 }
 
-int add(char *input_string) {
+int add(const char *input_string) {
     if (strlen(input_string) == 0) {
         return 0;
     }
