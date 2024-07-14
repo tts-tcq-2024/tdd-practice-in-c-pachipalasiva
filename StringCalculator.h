@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int parse_input(const char *input_string, const char *delimiter) {
+int parse_input(const char *input_string, char *delimiter) {
     if (strncmp(input_string, "//", 2) == 0) {
         *delimiter = input_string[2];
         return atoi(input_string + 4);
@@ -17,7 +17,7 @@ int split_and_convert(const char *input_string, char delimiter, int *numbers, in
     delim[0] = delimiter;
     delim[1] = '\0';
     *count = 0;
-    token = strtok(input_string, delim);
+    token = strtok((char *)input_string, delim);
     while (token != NULL) {
         numbers[*count] = atoi(token);
         (*count)++;
