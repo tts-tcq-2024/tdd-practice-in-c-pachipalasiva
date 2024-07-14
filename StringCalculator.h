@@ -8,7 +8,7 @@ int isemptystring(const char* value) {
 }
 
 // Function to convert string to integer and calculate sum if less than 1000
-int islessthanthousand(const char *num) {
+int lessthanthousand(const char *num) {
     int input = atoi(num); // Convert string to integer
     if (input < 1000) {
         return input;
@@ -22,7 +22,7 @@ int calculatesum(const char* input, const char* delimiter) {
     char* duplicate_input = strdup(input); // Duplicate the input string
     char* token = strtok(duplicate_input, delimiter); // Tokenize input string
     while (token != NULL) {
-        sum += islessthanthousand(token); // Add valid numbers less than 1000 to sum
+        sum += lessthanthousand(token); // Add valid numbers less than 1000 to sum
         token = strtok(NULL, delimiter);
     }
     free(duplicate_input); // Free allocated memory
@@ -30,7 +30,7 @@ int calculatesum(const char* input, const char* delimiter) {
 }
 
 // Function to append custom delimiter from input string
-void append_custom_delimiter(const char* input, char* delimiter) {
+void append_delimiter(const char* input, char* delimiter) {
     int i = 2; // Start after "//"
     while (input[i] != '\n' && input[i] != '\0') {
         delimiter[strlen(delimiter)] = input[i]; // Append character to delimiter
@@ -42,7 +42,7 @@ void append_custom_delimiter(const char* input, char* delimiter) {
 void checkcustomdelimiter(const char* input, char* delimiter) {
     if (input[0] == '/' && input[1] == '/') {
         strcpy(delimiter, ""); // Initialize delimiter string
-        append_custom_delimiter(input, delimiter); // Append custom delimiter
+        append_delimiter(input, delimiter); // Append custom delimiter
     } else {
         strcpy(delimiter, ",\n"); // Default delimiter
     }
