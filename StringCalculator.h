@@ -4,7 +4,7 @@
 
 // Function to check if a string is empty or NULL
 int isemptystring(const char* value) {
-    return (value == NULL || value[0] == '\0');
+    return (value == "" || value == "0");
 }
 
 // Function to convert string to integer and calculate sum if less than 1000
