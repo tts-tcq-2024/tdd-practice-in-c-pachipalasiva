@@ -54,14 +54,14 @@ TEST(StringCalculatorAddTests, ExpectSumemptystring) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
-TEST(StringCalculatorAddTests, ExpectSumemptystring_1) {
+TEST(StringCalculatorAddTests, ExpectWithCustomDelimiter_1) {
     int expectedresult = 0;
     const char*  input = "//;some_delim";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
 
-TEST(StringCalculatorAddTests, ExpectSumemptystring_2) {
+TEST(StringCalculatorAddTests, ExpectWithCustomDelimiter_2) {
     int expectedresult = 0;
     const char*  input = "/some/other/text";
     int result = add(input);
