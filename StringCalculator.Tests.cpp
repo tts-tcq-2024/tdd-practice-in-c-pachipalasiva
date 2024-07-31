@@ -55,8 +55,8 @@ TEST(StringCalculatorAddTests, ExpectSumemptystring) {
     ASSERT_EQ(result, expectedresult);
 }
 TEST(StringCalculatorAddTests, ExpectSumemptystring_1) {
-    int expectedresult = 0;
-    const char*  input = "a\0b";
+    int expectedresult = 600;
+    const char*  input = "//;\n100;200;300";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
