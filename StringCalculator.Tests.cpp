@@ -48,4 +48,10 @@ TEST(StringCalculatorAddTests, ExpectSumWithNegativeNumbers) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
+TEST(StringCalculatorAddTests, ExpectSumemptystring) {
+    int expectedresult = 0;
+    const char*  input = "\n";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
 
