@@ -50,8 +50,13 @@ TEST(StringCalculatorAddTests, ExpectSumWithNegativeNumbers) {
 }
 TEST(StringCalculatorAddTests, ExpectSumemptystring) {
     int expectedresult = 0;
-    const char*  input = "\n";
+    const char*  input = ",\n";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
-
+TEST(StringCalculatorAddTests, ExpectSumemptystring_1) {
+    int expectedresult = 0;
+    const char*  input = "a\0b";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
