@@ -60,3 +60,11 @@ TEST(StringCalculatorAddTests, ExpectSumemptystring_1) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
+
+TEST(StringCalculatorAddTests, ExpectSumemptystring_2) {
+    int expectedresult = 0;
+    const char*  input = "/some/other/text";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
